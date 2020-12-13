@@ -9,14 +9,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="stylesheet" href="./assets/css/fonts/fontawesome-free-5.15.1-web/css/all.css">
 </head>
 <body>
     <!--Block Element Modifier | BEM-->
     <div class="app">
         <header class="header">
-            <div class="grid">
-                <nav class="header__navbar">
+            <div class="grid wide">
+                <nav class="header__navbar hide-on-mobile-tablet">
                     <ul class="header__navbar-list">
                         <li class="header__navbar-item header__navbar-item--has-qr header__navbar-item--separate">
                             Tải ứng dụng
@@ -118,12 +120,20 @@
                             </ul>
                         </li>
                     </ul>
-                    
                 </nav>
 
                 <div class="header__navbar-with-search">
+                    
+                    <label for="mobile-search-checkbox" class="header__mobile-search">
+
+                       
+                        <label for="nav-mobile-input" class="nav__bars-btn-icon fas fa-bars"></label>
+                        
+                        <i class="header__mobile-search-icon fas fa-search"></i>
+                       
+                    </label>
                     <div class="header__navbar-with-search-logo">
-                        <a href="https://nhutuan99.github.io/Shopee-Page-Tutorial/" class="header__navbar-with-search-link">
+                        <a href="/" class="header__navbar-with-search-link">
                             <svg viewBox="0 0 192 65" class="header__navbar-with-search-logo-img">
                                 <g fill-rule="evenodd">
                                     <path
@@ -134,7 +144,8 @@
                         </a>
                     </div>
 
-                    <div class="header__navbar-with-search-input">
+                    <input type="checkbox" hidden id="mobile-search-checkbox" class="header__search-checkbox">
+                    <div class="header__navbar-with-search-input hide-on-mobile hide-on-mobile-tablet">
                         <div class="header__navbar-with-search-input-card-wrap">
                             <input type="text" class="header__navbar-with-search-input-card" placeholder="Nhập để tìm kiếm sản phẩm"> 
                             <!-- HISTORY -->
@@ -246,12 +257,46 @@
                     </div>
                 </div>
             </div>
+            
+           
+            
+            <ul class="header__sort-bar">
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Liên quan</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link header__sort-item--active">Mới nhất</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Bán chạy</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Giá</a>
+                </li>
+            </ul>
+
+            
+            <input type="checkbox" name="" class="nav__input" id="nav-mobile-input">
+
+            <label for="nav-mobile-input" class="nav__overlay"></label>
+
+            <nav class="nav__mobile">
+                <label for="nav-mobile-input" class="nav__mobile-close">
+                    <i class="fas fa-times"></i>
+                </label>
+                <ul class="nav__mobile-list">
+                    <li><a href="" class="nav__mobile-link">Danh mục</a></li>
+                    <li><a href="" class="nav__mobile-link">Thông báo</a></li>
+                    <li><a href="" class="nav__mobile-link">Trợ giúp</a></li>
+                    <li><a href="" class="nav__mobile-link">Tài khoản</a></li>
+                </ul>
+            </nav>
         </header>
 
         <div class="app_container">
-          <div class="grid">
-            <div class="grid__row app__content">
-                <div class="grid__coloumn-2">
+          <div class="grid wide">
+            <div class="row sm-gutter app__content">
+                <div class="col l-2 m-0 c-0">
                     <nav class="category">
                         <h3 class="category__heading">
                             Danh mục
@@ -269,8 +314,8 @@
                         </ul>
                     </nav>
                 </div>
-                <div class="grid__coloumn-10">
-                    <div class="home-filter">
+                <div class="col l-10 m-12 c-12">
+                    <div class="home-filter hide-on-mobile-tablet">
                         <span class="home-filter__label">Sắp xếp theo</span>
                         <button class="home-filter__btn btn">Phổ biến</button>
                         <button class="home-filter__btn btn btn--primary">Mới nhất</button>
@@ -303,11 +348,34 @@
                             </div>
                         </div>
                     </div>
+                      
+                    <nav class="mobile-category">
+                        <ul class="mobile-catrgory__list">
+                            <li class="mobile-catrgory__item">
+                                <a href="" class="mobile-catrgory__link">Thức ăn mèo</a>
+                            </li>
+                            <li class="mobile-catrgory__item">
+                                <a href="" class="mobile-catrgory__link">Đồ chơi mèo</a>
+                            </li>
+                             <li class="mobile-catrgory__item">
+                                <a href="" class="mobile-catrgory__link">Vệ sinh mèo</a>
+                            </li>
+                            <li class="mobile-catrgory__item">
+                                <a href="" class="mobile-catrgory__link">Thức ăn mèo</a>
+                            </li>
+                            <li class="mobile-catrgory__item">
+                                <a href="" class="mobile-catrgory__link">Đồ chơi mèo</a>
+                            </li>
+                             <li class="mobile-catrgory__item">
+                                <a href="" class="mobile-catrgory__link">Vệ sinh mèo</a>
+                            </li>
+                        </ul>
+                    </nav>
 
                     <div class="home-product">
                         <!-- GRID -> ROW -> COLUMN -->
-                        <div class="grid__row">
-                            <a class="grid__colummn-2-4">
+                        <div class="row sm-gutter">
+                            <a class="col l-2-4 m-4">
                                 <div class="home-product-item">
                                     <div class="home-product-item__img" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTJdOfSAcAQQf6UikmBV8TLsVKBYHfhvHh9A&usqp=CAU);"></div>
                                     <h4 class="home-product-item__name">Thức Ăn Hạt Cho Mèo Con Me-O Kitten Ocean Fish Vị Cá Biển, 1.1kg</h4>
@@ -349,7 +417,7 @@
                                     </div>
                                 </div>
                             </a>
-                            <a class="grid__colummn-2-4">
+                            <a class="col l-2-4 m-4">
                                 <div class="home-product-item">
                                     <div class="home-product-item__img" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTJdOfSAcAQQf6UikmBV8TLsVKBYHfhvHh9A&usqp=CAU);"></div>
                                     <h4 class="home-product-item__name">Thức Ăn Hạt Cho Mèo Con Me-O Kitten Ocean Fish Vị Cá Biển, 1.1kg</h4>
@@ -391,7 +459,7 @@
                                     </div>
                                 </div>
                             </a>
-                            <a class="grid__colummn-2-4">
+                            <a class="col l-2-4 m-4">
                                 <div class="home-product-item">
                                     <div class="home-product-item__img" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTJdOfSAcAQQf6UikmBV8TLsVKBYHfhvHh9A&usqp=CAU);"></div>
                                     <h4 class="home-product-item__name">Thức Ăn Hạt Cho Mèo Con Me-O Kitten Ocean Fish Vị Cá Biển, 1.1kg</h4>
@@ -433,7 +501,7 @@
                                     </div>
                                 </div>
                             </a>
-                            <a class="grid__colummn-2-4">
+                            <a class="col l-2-4 m-4">
                                 <div class="home-product-item">
                                     <div class="home-product-item__img" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTJdOfSAcAQQf6UikmBV8TLsVKBYHfhvHh9A&usqp=CAU);"></div>
                                     <h4 class="home-product-item__name">Thức Ăn Hạt Cho Mèo Con Me-O Kitten Ocean Fish Vị Cá Biển, 1.1kg</h4>
@@ -475,7 +543,7 @@
                                     </div>
                                 </div>
                             </a>
-                            <a class="grid__colummn-2-4">
+                            <a class="col l-2-4 m-4">
                                 <div class="home-product-item">
                                     <div class="home-product-item__img" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTJdOfSAcAQQf6UikmBV8TLsVKBYHfhvHh9A&usqp=CAU);"></div>
                                     <h4 class="home-product-item__name">Thức Ăn Hạt Cho Mèo Con Me-O Kitten Ocean Fish Vị Cá Biển, 1.1kg</h4>
@@ -517,7 +585,7 @@
                                     </div>
                                 </div>
                             </a>
-                            <a class="grid__colummn-2-4">
+                            <a class="col l-2-4 m-4">
                                 <div class="home-product-item">
                                     <div class="home-product-item__img" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTJdOfSAcAQQf6UikmBV8TLsVKBYHfhvHh9A&usqp=CAU);"></div>
                                     <h4 class="home-product-item__name">Thức Ăn Hạt Cho Mèo Con Me-O Kitten Ocean Fish Vị Cá Biển, 1.1kg</h4>
@@ -559,7 +627,7 @@
                                     </div>
                                 </div>
                             </a>
-                            <a class="grid__colummn-2-4">
+                            <a class="col l-2-4 m-4">
                                 <div class="home-product-item">
                                     <div class="home-product-item__img" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTJdOfSAcAQQf6UikmBV8TLsVKBYHfhvHh9A&usqp=CAU);"></div>
                                     <h4 class="home-product-item__name">Thức Ăn Hạt Cho Mèo Con Me-O Kitten Ocean Fish Vị Cá Biển, 1.1kg</h4>
@@ -601,7 +669,7 @@
                                     </div>
                                 </div>
                             </a>
-                            <a class="grid__colummn-2-4">
+                            <a class="col l-2-4 m-4">
                                 <div class="home-product-item">
                                     <div class="home-product-item__img" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTJdOfSAcAQQf6UikmBV8TLsVKBYHfhvHh9A&usqp=CAU);"></div>
                                     <h4 class="home-product-item__name">Thức Ăn Hạt Cho Mèo Con Me-O Kitten Ocean Fish Vị Cá Biển, 1.1kg</h4>
@@ -643,7 +711,7 @@
                                     </div>
                                 </div>
                             </a>
-                            <a class="grid__colummn-2-4">
+                            <a class="col l-2-4 m-4">
                                 <div class="home-product-item">
                                     <div class="home-product-item__img" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTJdOfSAcAQQf6UikmBV8TLsVKBYHfhvHh9A&usqp=CAU);"></div>
                                     <h4 class="home-product-item__name">Thức Ăn Hạt Cho Mèo Con Me-O Kitten Ocean Fish Vị Cá Biển, 1.1kg</h4>
@@ -685,7 +753,7 @@
                                     </div>
                                 </div>
                             </a>
-                            <a class="grid__colummn-2-4">
+                            <a class="col l-2-4 m-4">
                                 <div class="home-product-item">
                                     <div class="home-product-item__img" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTJdOfSAcAQQf6UikmBV8TLsVKBYHfhvHh9A&usqp=CAU);"></div>
                                     <h4 class="home-product-item__name">Thức Ăn Hạt Cho Mèo Con Me-O Kitten Ocean Fish Vị Cá Biển, 1.1kg</h4>
@@ -779,9 +847,9 @@
         </div>
         
         <div class="footer">
-            <div class="grid">
-                <div class="grid__row">
-                    <div class="grid__colummn-2-4">
+            <div class="grid wide footer__content">
+                <div class="row">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Chăm sóc khánh hàng</h3>
                         <ul class="footer__list">
                             <li class="footer-item">
@@ -795,7 +863,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__colummn-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Giới thiệu</h3>
                         <ul class="footer__list">
                             <li class="footer-item">
@@ -809,7 +877,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__colummn-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Danh mục</h3>
                         <ul class="footer__list">
                             <li class="footer-item">
@@ -823,7 +891,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__colummn-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Theo dõi</h3>
                         <ul class="footer__list">
                             <li class="footer-item">
@@ -846,7 +914,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__colummn-2-4">
+                    <div class="col l-2-4 m-8 c-12">
                         <h3 class="footer__heading">Vào cửa hàng trên ứng dụng</h3>
                         <div class="footer__download">
                             <img src="./assets/img/qr_code.png" alt="Download-QR" class="footer__download-qr">
@@ -858,16 +926,16 @@
                                     <img src="./assets/img/google_play.png" alt="google-play" class="footer__download-app-imgs">
                                 </a>
                             </div>
+                            <div class="footer__official">
+                                <img src="./assets/img/dathongbaobct.png" alt="official-page" class="footer__official-img">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             
             <div class="footer__bottom">
-                <div class="grid">
-                    <div class="footer__official">
-                        <img src="./assets/img/dathongbaobct.png" alt="official-page" class="footer__official-img">
-                    </div>
+                <div class="grid wide">
                     <p class="footer__text">@2020 - Designed by Nhu Tuan</p>
                 </div>
             </div>
